@@ -3,7 +3,7 @@ import plotly.express as px
 from dash import Dash, html, dcc
 
 # sekcja przygotowań danych
-ecom_sales_df = pd.read_csv('./dataset/ecom_sales.csv', sep=';')
+ecom_sales_df = pd.read_csv('../dataset/ecom_sales.csv', sep=';')
 
 ecom_line_df = ecom_sales_df.groupby('Year-Month')['OrderValue'].agg('sum').reset_index(name='Total Sales ($)')
 ecom_bar_df = ecom_sales_df.groupby('Country')['OrderValue'].agg('sum').reset_index(name='Total Sales ($)')

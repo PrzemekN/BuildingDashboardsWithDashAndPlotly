@@ -6,7 +6,7 @@ from dash import html
 import pandas as pd
 import plotly.express as px
 
-ecom_sales = pd.read_csv('./dataset/ecom_sales.csv', sep=';')
+ecom_sales = pd.read_csv('../dataset/ecom_sales.csv', sep=';')
 
 ecom_line = ecom_sales.groupby(['Year-Month', 'Country'])['OrderValue'].agg('sum').reset_index(name='Total Sales ($)')
 ecom_bar = ecom_sales.groupby('Country')['OrderValue'].agg('sum').reset_index(name='Total Sales ($)')

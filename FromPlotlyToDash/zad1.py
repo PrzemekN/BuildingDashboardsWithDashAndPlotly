@@ -1,6 +1,6 @@
 import pandas as pd
 import plotly_express as px
-ecom_sales = pd.read_csv('./dataset/ecom_sales.csv', sep=';')
+ecom_sales = pd.read_csv('../dataset/ecom_sales.csv', sep=';')
 print(ecom_sales.head(10))
 print(ecom_sales.columns)
 # ecom_sales = ecom_sales.groupby(['Year-Month', 'Country'])['OrderValue'].agg('sum')
