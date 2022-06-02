@@ -36,10 +36,12 @@ app.layout = html.Div(children=[
     html.H1('Sales by Country'),
     html.Div(dcc.Graph(figure=bar_fig_country), style={'width':'750px', 'margin':'auto'}),
     html.Span(children=[
+        'This year, the most sales came from:',
         html.B(top_country),
         html.I(' Copyright E-Com INC')
     ])
-])
+],
+style={'text-align': 'center', 'fontsize': 22})
 
 if __name__ == '__main__':
     app.run_server(debug=True)
