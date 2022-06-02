@@ -1,5 +1,5 @@
 # Adding an HTML list to Dash
-'''
+"""
     tags:
     .Br() - new line break,
     .Img() - insert an image, zarówno loklalny plik jaki z servera np htlm.Img(src='www.website.com/logo.png')
@@ -10,7 +10,7 @@
     .Span() - for insert plain text - moze zawierac children,
     .B() - bold some text
     .I() - Italizice some text
-'''
+"""
 
 import pandas as pd
 import plotly.express as px
