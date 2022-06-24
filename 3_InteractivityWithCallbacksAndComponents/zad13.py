@@ -13,10 +13,6 @@ logo_link = 'https://assets.datacamp.com/production/repositories/5893/datasets/f
 # zmieniamy kolumne z luzną datą na typ datowy:
 ecom_sales['InvoiceDate'] = pd.to_datetime(ecom_sales['InvoiceDate'])
 
-...
-# sekcja przygotowań wykresów
-...
-
 app = Dash(__name__)
 
 # sekcja rozmieszczenia elementów graficznych
@@ -45,12 +41,13 @@ app.layout = html.Div([
             dcc.Graph(id='sales_cat'),
             html.H2('Daily sales by Major Category',
                     style={'border': '2px solid black', 'width': '400px', 'margin': '0 auto'}),
-        ], style={'width':'700px','display':'inline-block'})
+        ], style={'width': '700px', 'display': 'inline-block'})
     ])
-], style={'text-align':'center', 'display':'inline-block', 'width':'100%'})
+], style={'text-align': 'center', 'display': 'inline-block', 'width': '100%'})
 
 
 @app.callback(
+    # otput wskazuje ktory element zostanie zmieniony przy uzyciu zwroconej wartosci wyzwalanej funkcji.
     Output(component_id='sales_cat', component_property='figure'),
     Input(component_id='sale_date', component_property='date')
 )
