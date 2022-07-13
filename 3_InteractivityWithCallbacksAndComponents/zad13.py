@@ -28,11 +28,13 @@ app.layout = html.Div([
             dcc.DatePickerSingle(
                 id='sale_date',
                 # ustawiamy min i maximum dla datepicera jako najmniejsza i najwieksza wartosc z dataframe
-                min_date_allowed=ecom_sales['InvoiceDate'].min(),
-                max_date_allowed=ecom_sales['InvoiceDate'].max(),
+                min_date_allowed=ecom_sales['InvoiceDate'].min(),  # zawezamy pole wyboru do min
+                max_date_allowed=ecom_sales['InvoiceDate'].max(),  # zaweżamy pole wyboru do max
                 # ustawiamy date ktora pokarze sie jako startowa date
-                date=date(2011, 4, 11),
-                initial_visible_month=date(2011, 4, 11),
+                date=date(2011, 4, 11),  # jaka data będzie ustawiona/wybrana na początku.
+                initial_visible_month=date(2011, 4, 11),  # po kliknięciu na date pojawi sie popup z kalendarzem
+                # # i ta zmienna mowi nam jaki miesiac pojawi sie.To pobiera/extraktuje miesiac wiec mozna podac
+                # datetime.now i samo zadba o pobranie miesiaca.
                 style={'width': '200px', 'margin': '0 auto'}
             )
         ], style={'width': '350px', 'height': '350px', 'display': 'inline-block', 'vertical-align': 'top',
@@ -47,7 +49,7 @@ app.layout = html.Div([
 
 
 @app.callback(
-    # otput wskazuje ktory element zostanie zmieniony przy uzyciu zwroconej wartosci wyzwalanej funkcji.
+    # output wskazuje ktory element zostanie zmieniony przy uzyciu zwroconej wartosci wyzwalanej funkcji.
     Output(component_id='sales_cat', component_property='figure'),
     Input(component_id='sale_date', component_property='date')
 )
