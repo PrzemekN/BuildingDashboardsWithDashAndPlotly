@@ -24,7 +24,7 @@ app.layout = html.Div([
             html.H2('Controls'),
             html.Br(),
             html.H3('Sale Date Select'),
-            # Tworzymy komonent 'single date picker' z identyfikatorem
+            # Tworzymy komponent 'single date picker' z identyfikatorem
             dcc.DatePickerSingle(
                 id='sale_date',
                 # ustawiamy min i maximum dla datepicera jako najmniejsza i najwieksza wartosc z dataframe
@@ -33,7 +33,7 @@ app.layout = html.Div([
                 # ustawiamy date ktora pokarze sie jako startowa date
                 date=date(2011, 4, 11),  # jaka data będzie ustawiona/wybrana na początku.
                 initial_visible_month=date(2011, 4, 11),  # po kliknięciu na date pojawi sie popup z kalendarzem
-                # # i ta zmienna mowi nam jaki miesiac pojawi sie.To pobiera/extraktuje miesiac wiec mozna podac
+                # i ta zmienna mowi nam jaki miesiac pojawi sie.To pobiera/extraktuje miesiac wiec mozna podac
                 # datetime.now i samo zadba o pobranie miesiaca.
                 style={'width': '200px', 'margin': '0 auto'}
             )
